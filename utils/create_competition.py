@@ -40,6 +40,22 @@ def patient_select(driver: WebDriver, xpath: str, value: str) -> bool:
             return False
 
 
+# fill in a datetime field
+def input_time(driver: WebDriver, xpath: str, time: datetime):
+    date_format = '%m%d%Y'
+    time_format = '%I%M%p'
+
+    datetime_input = gwefxp(driver, xpath)
+
+    date_formatted = time.strftime(date_format)
+    datetime_input.send_keys(date_formatted)
+
+    datetime_input.send_keys(Keys.TAB)
+
+    time_formatted = time.strftime(time_format)
+    datetime_input.send_keys(time_formatted)
+
+
 def login(driver: WebDriver, email: str, password: str):
     wuvexp(driver, '//*[@id="loginiframe"]')
 
@@ -97,30 +113,8 @@ def disable_registration(driver: WebDriver):
 def write_registration(driver: WebDriver, info: RegistrationInfo):
     wuvexp(driver, '/html/body/app-root/app-registration-component/app-base-component/div/div/div/div/div[1]/div/h1')
 
-    date_format = '%m%d%Y'
-    time_format = '%I%M%p'
-
-    start_time_input = gwefxp(driver, '//*[@id="startDate"]')
-    start_date_formatted = info.start_date.strftime(date_format)
-    print(start_date_formatted)
-    start_time_input.send_keys(start_date_formatted)
-
-    start_time_input.send_keys(Keys.TAB)
-
-    start_time_formatted = info.start_date.strftime(time_format)
-    print(start_time_formatted)
-    start_time_input.send_keys(start_time_formatted)
-
-    end_time_input = gwefxp(driver, '//*[@id="endDate"]')
-    end_date_formatted = info.end_date.strftime(date_format)
-    print(end_date_formatted)
-    end_time_input.send_keys(end_date_formatted)
-
-    end_time_input.send_keys(Keys.TAB)
-
-    end_time_formatted = info.end_date.strftime(time_format)
-    print(end_time_formatted)
-    end_time_input.send_keys(end_time_formatted)
+    input_time(driver, '//*[@id="startDate"]', info.start_date)
+    input_time(driver, '//*[@id="endDate"]', info.end_date)
 
     max_players_input = gwefxp(driver, '//*[@id="addRegistrationContainer"]/form/div[3]/input')
     max_players_input.clear()
@@ -133,3 +127,32 @@ def write_registration(driver: WebDriver, info: RegistrationInfo):
     button_next = gwefxp(driver, '/html/body/app-root/app-registration-component/app-base-component/div/div/div/div'
                                  '/div[4]/div/button/span[1]')
     button_next.click()
+
+
+def write_structure(driver: WebDriver, info: StructureInfo):
+    wuvexp(driver, '/html/body/app-root/app-create-competition-format-component/app-base-component/div/div/div/div'
+                   '/div[1]/div/h1')
+
+    button_import = gwefxp(driver, '/html/body/app-root/app-create-competition-format-component/app-base-component'
+                                   '/div/div/div/div/form/div[2]/label')
+    button_import.click()
+
+    if info.qualifier:
+        toggle_qualifier = gwefxp(driver, '//*[@id="create_qualifier"]')
+        toggle_qualifier.click()
+
+    structure_input = gwefxp(driver, '//*[@id="custom_structure_area"]')
+    structure_input.send_keys(info.structure_config)
+
+    button_next = gwefxp(driver, '/html/body/app-root/app-create-competition-format-component/app-base-component/div'
+                                 '/div/div/div/div[3]/div/button/span[1]')
+    button_next.click()
+
+
+def update_qualifier(driver: WebDriver, info: QualifierInfo):
+    wuvexp(driver, '/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div/div['
+                   '1]/div/h1')
+
+    button_edit = gwefxp(driver, '/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div'
+                                 '/div/div/app-spot-structure-component/div[3]/div[1]/div[2]/button/svg/path')
+    button_edit.click()

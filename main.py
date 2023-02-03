@@ -1,4 +1,5 @@
 import datetime as dt
+import os.path
 import sys
 
 from selenium import webdriver
@@ -36,3 +37,16 @@ if __name__ == '__main__':
     )
 
     write_registration(driver, registration_info)
+
+    structure_info = StructureInfo(
+        open(os.path.join(os.path.curdir, 'premade_structures/24PlayerSingle_B_1.txt')).read(),
+        True
+    )
+
+    write_structure(driver, structure_info)
+
+    qualifier_info = QualifierInfo(
+
+    )
+
+    update_qualifier(driver, qualifier_info)
