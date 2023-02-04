@@ -1,3 +1,4 @@
+import copy
 import datetime as dt
 import os.path
 import sys
@@ -66,7 +67,7 @@ if __name__ == '__main__':
     update_qualifier(driver, qualifier_info)
 
     round_1_info = RoundInfo(
-        name="test_round",
+        name="test_round_1",
         start_date=qualifier_info.end_date + dt.timedelta(minutes=5),
         end_date=qualifier_info.end_date + dt.timedelta(minutes=25),
         leaderboard_type=LeaderboardType.BRACKET,
@@ -80,12 +81,18 @@ if __name__ == '__main__':
         ))
     )
 
-    round_2_info = round_1_info
+    round_2_info = copy.copy(round_1_info)
+    round_2_info.name = "test_round_2"
     round_2_info.start_date = round_1_info.end_date + dt.timedelta(minutes=5)
     round_2_info.end_date = round_2_info.start_date + dt.timedelta(minutes=20)
+    round_2_info.qualifier = None
 
-    round_3_info = round_2_info
+    round_3_info = copy.copy(round_2_info)
+    round_3_info.name = "test_round_3"
     round_3_info.start_date = round_2_info.end_date + dt.timedelta(minutes=5)
     round_3_info.end_date = round_3_info.start_date + dt.timedelta(minutes=20)
+    round_3_info.qualifier = None
 
     update_rounds(driver, [round_1_info, round_2_info, round_3_info])
+
+    create_comp(driver)

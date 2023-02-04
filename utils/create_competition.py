@@ -79,8 +79,20 @@ def add_maps(driver: WebDriver, maps: list[str]):
 
 
 def fill_in_setting(driver: WebDriver, setting: dict):
-    wuvexp(driver, '//*[@id="value"]')
-    name_input = gwefxp(driver, '//*[@id="name"]')
+    wuvexp(driver, '//*[@id="name"]')
+    name_input_q1 = gwefxp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div/div/div/div'
+                                '/form/app-config-form-component/form/div[6]/div/app-settings-component/form/div['
+                                '1]/div/input')
+    name_input_q2 = gwefxp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div/div/div/div'
+                                '/form/app-config-form-component/form/div[9]/div/app-settings-component/form/div['
+                                '1]/div/input')
+    name_input_r1 = gwefxp(driver, '/html/body/app-root/app-new-round-component/app-base-component/div/div/div/div'
+                                   '/form/app-config-form-component/form/div[7]/div/app-settings-component/form/div['
+                                   '1]/div/input')
+    name_input_r2 = gwefxp(driver, '/html/body/app-root/app-new-round-component/app-base-component/div/div/div/div'
+                                   '/form/app-config-form-component/form/div[10]/div/app-settings-component/form/div['
+                                   '1]/div/input')
+
     name_input.send_keys(setting['Setting'])
 
     patient_select(driver, '//*[@id="type"]', setting['Type'])
@@ -89,27 +101,77 @@ def fill_in_setting(driver: WebDriver, setting: dict):
     value_input.send_keys(setting['Value'])
 
 
-def add_settings(driver: WebDriver, settings: json):
+def add_settings(driver: WebDriver, settings: json, qualifier: bool):
     for script_setting in settings['script_settings']:
         button_add_settings = gwefxp(driver, '//*[@id="buttonAddScriptSettings"]')
         button_add_settings.click()
 
-        fill_in_setting(driver, script_setting)
+        if qualifier:
+            wuvexp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div/div/div/div/form/app'
+                           '-config-form-component/form/div[6]/div/app-settings-component/form/div[1]/div/input')
+            name_input = gwefxp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div/div'
+                                        '/div/div/form/app-config-form-component/form/div['
+                                        '6]/div/app-settings-component/form/div[1]/div/input')
+        else:
+            wuvexp(driver, '/html/body/app-root/app-new-round-component/app-base-component/div/div/div/div/form/app'
+                           '-config-form-component/form/div[7]/div/app-settings-component/form/div[1]/div/input')
+            name_input = gwefxp(driver, '/html/body/app-root/app-new-round-component/app-base-component/div/div/div'
+                                        '/div/form/app-config-form-component/form/div['
+                                        '7]/div/app-settings-component/form/div[1]/div/input')
+        name_input.send_keys(script_setting['Setting'])
 
-        button_add_confirm = gwefxp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div'
-                                            '/div/div/div/form/app-config-form-component/form/div['
-                                            '6]/div/app-settings-component/form/div[4]/button[2]')
+        patient_select(driver, '//*[@id="type"]', script_setting['Type'])
+
+        if script_setting['Type'] == 'boolean':
+            patient_select(driver, '//*[@id="selectBool"]', script_setting['Value'])
+        else:
+            value_input = gwefxp(driver, '//*[@id="value"]')
+            value_input.send_keys(script_setting['Value'])
+
+        if qualifier:
+            button_add_confirm = gwefxp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div'
+                                                '/div/div/div/form/app-config-form-component/form/div['
+                                                '6]/div/app-settings-component/form/div[4]/button[2]')
+        else:
+            button_add_confirm = gwefxp(driver, '/html/body/app-root/app-new-round-component/app-base-component/div/div'
+                                                '/div/div/form/app-config-form-component/form/div['
+                                                '7]/div/app-settings-component/form/div[4]/button[2]')
         button_add_confirm.click()
 
     for plugin_setting in settings['plugin_settings']:
         button_add_settings = gwefxp(driver, '//*[@id="buttonAddPluginSettings"]')
         button_add_settings.click()
 
-        fill_in_setting(driver, plugin_setting)
+        if qualifier:
+            wuvexp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div/div/div/div/form'
+                           '/app-config-form-component/form/div[9]/div/app-settings-component/form/div[1]/div/input')
+            name_input = gwefxp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div/div'
+                                        '/div/div/form/app-config-form-component/form/div['
+                                        '9]/div/app-settings-component/form/div[1]/div/input')
+        else:
+            wuvexp(driver, '/html/body/app-root/app-new-round-component/app-base-component/div/div/div/div/form/app'
+                           '-config-form-component/form/div[10]/div/app-settings-component/form/div[1]/div/input')
+            name_input = gwefxp(driver, '/html/body/app-root/app-new-round-component/app-base-component/div/div/div'
+                                        '/div/form/app-config-form-component/form/div['
+                                        '10]/div/app-settings-component/form/div[1]/div/input')
+        name_input.send_keys(plugin_setting['Setting'])
 
-        button_add_confirm = gwefxp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div'
-                                            '/div/div/div/form/app-config-form-component/form/div['
-                                            '9]/div/app-settings-component/form/div[4]/button[2]')
+        patient_select(driver, '//*[@id="type"]', plugin_setting['Type'])
+
+        if plugin_setting['Type'] == 'boolean':
+            patient_select(driver, '//*[@id="selectBool"]', plugin_setting['Value'])
+        else:
+            value_input = gwefxp(driver, '//*[@id="value"]')
+            value_input.send_keys(plugin_setting['Value'])
+
+        if qualifier:
+            button_add_confirm = gwefxp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div'
+                                                '/div/div/div/form/app-config-form-component/form/div['
+                                                '9]/div/app-settings-component/form/div[4]/button[2]')
+        else:
+            button_add_confirm = gwefxp(driver, '/html/body/app-root/app-new-round-component/app-base-component/div'
+                                                '/div/div/div/form/app-config-form-component/form/div['
+                                                '10]/div/app-settings-component/form/div[4]/button[2]')
         button_add_confirm.click()
 
 
@@ -233,7 +295,7 @@ def update_qualifier(driver: WebDriver, info: QualifierInfo):
 
     add_maps(driver, info.maps)
 
-    add_settings(driver, info.settings)
+    add_settings(driver, info.settings, True)
 
     button_final_edit = gwefxp(driver, '//*[@id="editQualification"]/span')
     button_final_edit.click()
@@ -242,12 +304,19 @@ def update_qualifier(driver: WebDriver, info: QualifierInfo):
 def update_rounds(driver: WebDriver, info: list[RoundInfo]):
     round_num: int = 1
     for round_info in info:
-        wuvexp(driver, f'/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div/app'
-                       f'-spot-structure-component/div[3]/div[{1+round_num}]/div[2]/button[2]')
-
-        button_edit = gwefxp(driver, f'/html/body/app-root/app-create-competition-spotstructure/app-base-component'
-                                     f'/div/div/div/div/app-spot-structure-component/div[3]/div[{1+round_num}]/div['
-                                     f'2]/button[2]')
+        alert: bool = len(driver.find_elements(By.XPATH, '//*[@id="alert-dates-2"]/p')) > 0
+        if alert:
+            wuvexp(driver, f'/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div/app'
+                           f'-spot-structure-component/div[3]/div[{1+round_num}]/div[3]/button[2]')
+            button_edit = gwefxp(driver, f'/html/body/app-root/app-create-competition-spotstructure/app-base-component'
+                                         f'/div/div/div/div/app-spot-structure-component/div[3]/div[{1+round_num}]/div['
+                                         f'3]/button[2]')
+        else:
+            wuvexp(driver, f'/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div/app'
+                           f'-spot-structure-component/div[3]/div[{1+round_num}]/div[2]/button[2]')
+            button_edit = gwefxp(driver, f'/html/body/app-root/app-create-competition-spotstructure/app-base-component'
+                                         f'/div/div/div/div/app-spot-structure-component/div[3]/div[{1+round_num}]/div['
+                                         f'2]/button[2]')
         button_edit.click()
 
         wuvexp(driver, '/html/body/app-root/app-new-round-component/app-base-component/div/div/div/div/div[1]/h1')
@@ -259,7 +328,8 @@ def update_rounds(driver: WebDriver, info: list[RoundInfo]):
         input_time(driver, '//*[@id="roundStartDate"]', round_info.start_date)
         input_time(driver, '//*[@id="roundEndDate"]', round_info.end_date)
 
-        patient_select(driver, '//*[@id="qualifier"]', round_info.qualifier.name)
+        if round_info.qualifier:
+            patient_select(driver, '//*[@id="qualifier"]', round_info.qualifier.name)
 
         patient_select(driver, '//*[@id="leaderboardType"]', int(round_info.leaderboard_type))
 
@@ -281,15 +351,23 @@ def update_rounds(driver: WebDriver, info: list[RoundInfo]):
 
         add_maps(driver, round_info.maps)
 
-        add_settings(driver, round_info.settings)
+        add_settings(driver, round_info.settings, False)
 
         button_final_edit = gwefxp(driver, '/html/body/app-root/app-new-round-component/app-base-component/div/div'
                                            '/div/div/form/div[6]/div/button[2]/span')
         button_final_edit.click()
+
+        round_num += 1
 
     wuvexp(driver, '/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div/div['
                    '2]/button')
 
     button_create = gwefxp(driver, '/html/body/app-root/app-create-competition-spotstructure/app-base-component/div'
                                    '/div/div/div/div[2]/button')
+    button_create.click()
+
+
+def create_comp(driver: WebDriver):
+    wuvexp(driver, '//*[@id="dialog"]/div/div[2]/button[2]')
+    button_create = gwefxp(driver, '//*[@id="dialog"]/div/div[2]/button[2]')
     button_create.click()
