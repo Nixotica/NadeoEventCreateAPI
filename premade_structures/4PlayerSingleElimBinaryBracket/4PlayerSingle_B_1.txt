@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "rounds": [
+    {
+      "name": "Grand Finals",
+      "matchGeneratorType": "spot_filler",
+      "matchGeneratorData":
+      {
+        "matches": [
+          {
+            "spots": [
+              {
+                "spotType": "match_participant",
+                "roundPosition": 1,
+                "matchPosition": 0,
+                "rank": 1
+              },
+              {
+                "spotType": "match_participant",
+                "roundPosition": 1,
+                "matchPosition": 1,
+                "rank": 1
+              },
+              {
+                "spotType": "match_participant",
+                "roundPosition": 1,
+                "matchPosition": 1,
+                "rank": 2
+              },
+              {
+                "spotType": "match_participant",
+                "roundPosition": 1,
+                "matchPosition": 0,
+                "rank": 2
+              },
+              {
+                "spotType": "match_participant",
+                "roundPosition": 1,
+                "matchPosition": 0,
+                "rank": 3
+              },
+              {
+                "spotType": "match_participant",
+                "roundPosition": 1,
+                "matchPosition": 1,
+                "rank": 3
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

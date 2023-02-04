@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from .forms import *
 import logging
 
-WAIT_TIMEOUT = 10
+WAIT_TIMEOUT = 20
 
 
 # "get_web_element_from_xpath"
@@ -24,12 +24,15 @@ def wuvexp(driver: WebDriver, xpath: str) -> None:
 
 
 # select from dropdown with waiting and polling
-def patient_select(driver: WebDriver, xpath: str, value: str) -> bool:
+def patient_select(driver: WebDriver, xpath: str, value) -> bool:
     wait = WebDriverWait(driver, WAIT_TIMEOUT, ignored_exceptions=NoSuchElementException)
     wait.until(EC.visibility_of_element_located((By.XPATH, xpath + '/option[1]')))
     select = Select(driver.find_element(By.XPATH, xpath))
     try:
-        select.select_by_visible_text(value)
+        if isinstance(value, str):
+            select.select_by_visible_text(value)
+        else:
+            select.select_by_index(value)
         return True
     except NoSuchElementException:
         logging.warning(f"Could not find selection '{value}', defaulting to first available.")
@@ -54,6 +57,60 @@ def input_time(driver: WebDriver, xpath: str, time: datetime):
 
     time_formatted = time.strftime(time_format)
     datetime_input.send_keys(time_formatted)
+
+
+def add_maps(driver: WebDriver, maps: list[str]):
+    for map in maps:
+        wuvexp(driver, '//*[@id="buttonAddMap"]')
+        button_add_maps = gwefxp(driver, '//*[@id="buttonAddMap"]')
+        button_add_maps.click()
+
+        wuvexp(driver, '//*[@id="browserMaps"]/div[2]/div[2]/div/div[1]')
+        button_uid = gwefxp(driver, '//*[@id="btnManualUid"]')
+        button_uid.click()
+
+        wuvexp(driver, '//*[@id="map"]')
+        uid_input = gwefxp(driver, '//*[@id="map"]')
+        uid_input.send_keys(map)
+
+        button_add = gwefxp(driver, '//*[@id="browserMaps"]/div[2]/div['
+                                    '2]/div/app-map-form-component/div/form/div/button[2]')
+        button_add.click()
+
+
+def fill_in_setting(driver: WebDriver, setting: dict):
+    wuvexp(driver, '//*[@id="value"]')
+    name_input = gwefxp(driver, '//*[@id="name"]')
+    name_input.send_keys(setting['Setting'])
+
+    patient_select(driver, '//*[@id="type"]', setting['Type'])
+
+    value_input = gwefxp(driver, '//*[@id="value"]')
+    value_input.send_keys(setting['Value'])
+
+
+def add_settings(driver: WebDriver, settings: json):
+    for script_setting in settings['script_settings']:
+        button_add_settings = gwefxp(driver, '//*[@id="buttonAddScriptSettings"]')
+        button_add_settings.click()
+
+        fill_in_setting(driver, script_setting)
+
+        button_add_confirm = gwefxp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div'
+                                            '/div/div/div/form/app-config-form-component/form/div['
+                                            '6]/div/app-settings-component/form/div[4]/button[2]')
+        button_add_confirm.click()
+
+    for plugin_setting in settings['plugin_settings']:
+        button_add_settings = gwefxp(driver, '//*[@id="buttonAddPluginSettings"]')
+        button_add_settings.click()
+
+        fill_in_setting(driver, plugin_setting)
+
+        button_add_confirm = gwefxp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div'
+                                            '/div/div/div/form/app-config-form-component/form/div['
+                                            '9]/div/app-settings-component/form/div[4]/button[2]')
+        button_add_confirm.click()
 
 
 def login(driver: WebDriver, email: str, password: str):
@@ -150,9 +207,89 @@ def write_structure(driver: WebDriver, info: StructureInfo):
 
 
 def update_qualifier(driver: WebDriver, info: QualifierInfo):
-    wuvexp(driver, '/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div/div['
-                   '1]/div/h1')
+    wuvexp(driver, '/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div/app'
+                   '-spot-structure-component/div[3]/div[1]/div[2]/button')
 
-    button_edit = gwefxp(driver, '/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div'
-                                 '/div/div/app-spot-structure-component/div[3]/div[1]/div[2]/button/svg/path')
+    button_edit = gwefxp(driver,
+                         '/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div'
+                         '/app-spot-structure-component/div[3]/div[1]/div[2]/button')
     button_edit.click()
+
+    wuvexp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div/div/div/div/div[1]/h1')
+
+    if info.name:
+        name_input = gwefxp(driver, '//*[@id="qualificationName"]')
+        name_input.clear()
+        name_input.send_keys(info.name)
+
+    input_time(driver, '//*[@id="qualificationStartDate"]', info.start_date)
+    input_time(driver, '//*[@id="qualificationEndDate"]', info.end_date)
+
+    patient_select(driver, '//*[@id="leaderboardScore"]', int(info.leaderboard_score))
+
+    max_players_input = gwefxp(driver, '//*[@id="max_players"]')
+    max_players_input.clear()
+    max_players_input.send_keys(info.max_players)
+
+    add_maps(driver, info.maps)
+
+    add_settings(driver, info.settings)
+
+    button_final_edit = gwefxp(driver, '//*[@id="editQualification"]/span')
+    button_final_edit.click()
+
+
+def update_rounds(driver: WebDriver, info: list[RoundInfo]):
+    round_num: int = 1
+    for round_info in info:
+        wuvexp(driver, f'/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div/app'
+                       f'-spot-structure-component/div[3]/div[{1+round_num}]/div[2]/button[2]')
+
+        button_edit = gwefxp(driver, f'/html/body/app-root/app-create-competition-spotstructure/app-base-component'
+                                     f'/div/div/div/div/app-spot-structure-component/div[3]/div[{1+round_num}]/div['
+                                     f'2]/button[2]')
+        button_edit.click()
+
+        wuvexp(driver, '/html/body/app-root/app-new-round-component/app-base-component/div/div/div/div/div[1]/h1')
+
+        name_input = gwefxp(driver, '//*[@id="name"]')
+        name_input.clear()
+        name_input.send_keys(round_info.name)
+
+        input_time(driver, '//*[@id="roundStartDate"]', round_info.start_date)
+        input_time(driver, '//*[@id="roundEndDate"]', round_info.end_date)
+
+        patient_select(driver, '//*[@id="qualifier"]', round_info.qualifier.name)
+
+        patient_select(driver, '//*[@id="leaderboardType"]', int(round_info.leaderboard_type))
+
+        patient_select(
+            driver,
+            '/html/body/app-root/app-new-round-component/app-base-component/div/div/div/div/form/app-config-form'
+            '-component/form/div[1]/select ',
+            round_info.script
+        )
+
+        max_players_input = gwefxp(driver, '//*[@id="max_players"]')
+        max_players_input.clear()
+        max_players_input.send_keys(round_info.max_players)
+
+        if round_info.max_spectators:
+            max_spec_input = gwefxp(driver, '//*[@id="max_spectators"]')
+            max_spec_input.clear()
+            max_spec_input.send_keys(round_info.max_spectators)
+
+        add_maps(driver, round_info.maps)
+
+        add_settings(driver, round_info.settings)
+
+        button_final_edit = gwefxp(driver, '/html/body/app-root/app-new-round-component/app-base-component/div/div'
+                                           '/div/div/form/div[6]/div/button[2]/span')
+        button_final_edit.click()
+
+    wuvexp(driver, '/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div/div['
+                   '2]/button')
+
+    button_create = gwefxp(driver, '/html/body/app-root/app-create-competition-spotstructure/app-base-component/div'
+                                   '/div/div/div/div[2]/button')
+    button_create.click()

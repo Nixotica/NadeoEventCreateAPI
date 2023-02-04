@@ -1,4 +1,18 @@
+import json
 from datetime import datetime
+from enum import IntEnum
+
+
+class LeaderboardScore(IntEnum):
+    RANKS = 0,
+    SKILLPOINTS = 1,
+    TIME = 2,
+
+
+class LeaderboardType(IntEnum):
+    BRACKET = 1,
+    SUM_SCORE = 2,
+    BIGGEST_SCORE = 3,
 
 
 class CompetitionBasicInfo:
@@ -39,3 +53,49 @@ class StructureInfo:
     ):
         self.structure_config = structure_config
         self.qualifier = qualifier
+
+
+class QualifierInfo:
+    def __init__(
+            self,
+            name: str,
+            start_date: datetime,
+            end_date: datetime,
+            leaderboard_score: LeaderboardScore,
+            max_players: int,
+            maps: list[str],
+            settings: json = None
+    ):
+        self.name = name
+        self.start_date = start_date
+        self.end_date = end_date
+        self.leaderboard_score = leaderboard_score
+        self.max_players = max_players
+        self.maps = maps
+        self.settings = settings
+
+
+class RoundInfo:
+    def __init__(
+            self,
+            name: str,
+            start_date: datetime,
+            end_date: datetime,
+            leaderboard_type: LeaderboardType,
+            script: str,
+            max_players: int,
+            maps: list[str],
+            max_spectators: int = None,
+            qualifier: QualifierInfo = None,
+            settings: json = None
+    ):
+        self.name = name
+        self.start_date = start_date
+        self.end_date = end_date
+        self.leaderboard_type = leaderboard_type
+        self.script = script
+        self.max_players = max_players
+        self.maps = maps
+        self.max_spectators = max_spectators
+        self.qualifier = qualifier
+        self.settings = settings
