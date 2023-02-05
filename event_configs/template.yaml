@@ -1,0 +1,44 @@
+Browser: !!string # Your browser (only Chrome supported for now)"
+Basic Info:
+  Name: !!string # Name to be displayed in game as your event
+  Club: !!string # Club in which event will be hosted
+  Teams: !!boolean # Whether this is a team event or not
+  Desc: !!string # (Optional) Description of your event to be shown in game
+  Rules: !!string # (Optional) Description of your event rules to be shown in game
+Registration Info:
+  Start Date: !!timestamp # (Optional) Time registration opens in ISO date time format
+  End Date: !!timestamp # (Optional) Time registration closes in ISO date time format
+  Start Offset: !!int # (Optional) Time since running script to open registration in minutes
+  End Offset: !!int # (Optional) Time since running script to close registration in minutes
+  Max PLayers: !!int # (Optional) Maximum players allowed to register
+Structure Info:
+  Premade Structure: !!string # Name of folder in /premade_structures/ defining your structure
+Qualifier Info:
+  Name: !!string # (Optional) Name of qualifier
+  Start Date: !!timestamp # (Optional) Time qualifier starts in ISO date time format
+  End Date: !!timestamp # (Optional) Time qualifier ends in ISO date time format
+  Start Offset: !!int # (Optional) Time since running script to start qualifier in minutes
+  End Offset: !!int # (Optional) Time since running script to end qualifier in minutes
+  Leaderboard Score: !!int # (Optional) Score keeping method (view website for options, zero-indexed)
+  Max Players: !!int # (Optional) Maximum players allowed to play the qualifier
+  Maps:
+    Pool: !!list[string] # (Optional) UID of map(s)
+    Choose Random: !!boolean # (Optional) Choose random map from list of maps (or random from TMX if none provided)
+    Choose Count: !!int # (Optional) Number of maps to choose from pool (or from TMX if none provided)
+  Settings: !!string # (Optional) Name of .json in /premade_structure/<your-structure>/
+Round Info:
+  - :
+    Name: !!string # (Optional) Name of round
+    Start Date: !!timestamp # (Optional) Time round starts in ISO date time format
+    End Date: !!timestamp # (Optional) Time round ends in ISO date time format
+    Start Offset: !!int # (Optional) Time since running script to start round in minutes
+    End Offset: !!int # (Optional) Time since running script to end round in minutes
+    Leaderboard Type: !!int # (Optional) Score keeping method (view website for options, zero-indexed)
+    Script: !!string # (Optional) Competitive mode script to use (view website for options)
+    Max Players: !!int # (Optional) Maximum players allowed to play the round
+    Maps:
+      Pool: !!list[string] # (Optional) UID of map(s)
+      Choose Random: !!boolean # Choose random map from list of maps (or random from TMX if none provided)
+      Choose Count: !!int # Number of maps to choose from pool (or from TMX if none provided)
+    Settings: !!string # (Optional) Name of .json in /premade_structure/<your-structure>/
+  - :

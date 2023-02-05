@@ -211,6 +211,8 @@ def write_basic_info(driver: WebDriver, info: CompetitionBasicInfo):
 
     if info.desc:
         desc_input = gwefxp(driver, '//*[@id="description"]')
+        info.desc += "\n\nThis event was generated using the Trackmania Event Creation tool. " \
+                     "https://github.com/Nixotica/NadeoEventCreateAPI "
         desc_input.send_keys(info.desc)
 
     if info.rules:

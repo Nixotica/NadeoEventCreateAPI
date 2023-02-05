@@ -4,9 +4,9 @@ from enum import IntEnum
 
 
 class LeaderboardScore(IntEnum):
-    RANKS = 0,
-    SKILLPOINTS = 1,
-    TIME = 2,
+    RANKS = 1,
+    SKILLPOINTS = 2,
+    TIME = 3,
 
 
 class LeaderboardType(IntEnum):
