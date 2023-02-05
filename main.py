@@ -45,7 +45,7 @@ if __name__ == '__main__':
     structure_info = StructureInfo(
         structure_config=open(
             os.path.join(os.path.curdir,
-                         'premade_structures/4PlayerSingleElimBinaryBracket/24PlayerSingle_B_1.txt')).read(),
+                         'premade_structures/24PlayerSingleElimBinaryBracket/structure.txt')).read(),
         qualifier=True
     )
 
@@ -60,7 +60,7 @@ if __name__ == '__main__':
         maps=["JgdwUWRLCujJCCQWzIk9PUqv_hh", "WVer0yh80n1MG_KNDL22QzXZGn8"],
         settings=json.load(open(
             os.path.join(os.path.curdir,
-                         'premade_structures/4PlayerSingleElimBinaryBracket/qualifier.json')
+                         'premade_structures/24PlayerSingleElimBinaryBracket/qualifier_settings.json')
         ))
     )
 
@@ -77,7 +77,7 @@ if __name__ == '__main__':
         qualifier=qualifier_info,
         settings=json.load(open(
             os.path.join(os.path.curdir,
-                         'premade_structures/4PlayerSingleElimBinaryBracket/rounds.json')
+                         'premade_structures/24PlayerSingleElimBinaryBracket/round_settings.json')
         ))
     )
 

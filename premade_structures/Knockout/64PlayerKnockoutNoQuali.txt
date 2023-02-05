@@ -1,0 +1,273 @@
+{
+    "version": 0,
+    "rounds": [
+        {
+            "matchGeneratorData": {
+                "matches": [
+                    {
+                        "spots": [
+                            {
+                                "seed": 1,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 2,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 3,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 4,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 5,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 6,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 7,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 8,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 9,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 10,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 11,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 12,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 13,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 14,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 15,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 16,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 17,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 18,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 19,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 20,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 21,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 22,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 23,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 24,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 25,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 26,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 27,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 28,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 29,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 30,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 31,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 32,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 33,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 34,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 35,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 36,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 37,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 38,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 39,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 40,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 41,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 42,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 43,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 44,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 45,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 46,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 47,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 48,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 49,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 50,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 51,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 52,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 53,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 54,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 55,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 56,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 57,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 58,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 59,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 60,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 61,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 62,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 63,
+                                "spotType": "competition_participant"
+                            },
+                            {
+                                "seed": 64,
+                                "spotType": "competition_participant"
+                            }
+                        ],
+                        "settings": []
+                    }
+                ]
+            },
+            "matchGeneratorType": "spot_filler"
+        }
+    ]
+}
