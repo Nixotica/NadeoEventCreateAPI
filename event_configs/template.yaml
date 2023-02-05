@@ -6,14 +6,16 @@ Basic Info:
   Desc: !!string # (Optional) Description of your event to be shown in game
   Rules: !!string # (Optional) Description of your event rules to be shown in game
 Registration Info:
+  Registration: !!boolean # Whether to have registration for this event
   Start Date: !!timestamp # (Optional) Time registration opens in ISO date time format
   End Date: !!timestamp # (Optional) Time registration closes in ISO date time format
   Start Offset: !!int # (Optional) Time since running script to open registration in minutes
   End Offset: !!int # (Optional) Time since running script to close registration in minutes
-  Max PLayers: !!int # (Optional) Maximum players allowed to register
+  Max PLayers: !!int # Maximum players allowed to register
 Structure Info:
   Premade Structure: !!string # Name of folder in /premade_structures/ defining your structure
 Qualifier Info:
+  Qualifier: !!boolean # Whether to have qualifier for this event
   Name: !!string # (Optional) Name of qualifier
   Start Date: !!timestamp # (Optional) Time qualifier starts in ISO date time format
   End Date: !!timestamp # (Optional) Time qualifier ends in ISO date time format
@@ -27,7 +29,7 @@ Qualifier Info:
     Choose Count: !!int # (Optional) Number of maps to choose from pool (or from TMX if none provided)
   Settings: !!string # (Optional) Name of .json in /premade_structure/<your-structure>/
 Round Info:
-  - :
+  Round 1:
     Name: !!string # (Optional) Name of round
     Start Date: !!timestamp # (Optional) Time round starts in ISO date time format
     End Date: !!timestamp # (Optional) Time round ends in ISO date time format
@@ -41,4 +43,4 @@ Round Info:
       Choose Random: !!boolean # Choose random map from list of maps (or random from TMX if none provided)
       Choose Count: !!int # Number of maps to choose from pool (or from TMX if none provided)
     Settings: !!string # (Optional) Name of .json in /premade_structure/<your-structure>/
-  - :
+  Round 2:

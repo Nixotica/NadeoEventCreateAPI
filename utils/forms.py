@@ -86,7 +86,7 @@ class RoundInfo:
             max_players: int,
             maps: list[str],
             max_spectators: int = None,
-            qualifier: QualifierInfo = None,
+            qualifier: str = None,
             settings: json = None
     ):
         self.name = name

@@ -234,16 +234,20 @@ def disable_registration(driver: WebDriver):
 def write_registration(driver: WebDriver, info: RegistrationInfo):
     wuvexp(driver, '/html/body/app-root/app-registration-component/app-base-component/div/div/div/div/div[1]/div/h1')
 
-    input_time(driver, '//*[@id="startDate"]', info.start_date)
-    input_time(driver, '//*[@id="endDate"]', info.end_date)
+    if info is None:
+        disable_registration(driver)
+    else:
+        if info.start_date and info.end_date:
+            input_time(driver, '//*[@id="startDate"]', info.start_date)
+            input_time(driver, '//*[@id="endDate"]', info.end_date)
 
-    max_players_input = gwefxp(driver, '//*[@id="addRegistrationContainer"]/form/div[3]/input')
-    max_players_input.clear()
-    max_players_input.send_keys(info.max_players)
+        max_players_input = gwefxp(driver, '//*[@id="addRegistrationContainer"]/form/div[3]/input')
+        max_players_input.clear()
+        max_players_input.send_keys(info.max_players)
 
-    if info.zones:
-        zones_input = gwefxp(driver, '//*[@id="addRegistrationContainer"]/form/div[4]/input')
-        zones_input.send_keys(info.zones)
+        if info.zones:
+            zones_input = gwefxp(driver, '//*[@id="addRegistrationContainer"]/form/div[4]/input')
+            zones_input.send_keys(info.zones)
 
     button_next = gwefxp(driver, '/html/body/app-root/app-registration-component/app-base-component/div/div/div/div'
                                  '/div[4]/div/button/span[1]')
@@ -286,14 +290,16 @@ def update_qualifier(driver: WebDriver, info: QualifierInfo):
         name_input.clear()
         name_input.send_keys(info.name)
 
-    input_time(driver, '//*[@id="qualificationStartDate"]', info.start_date)
-    input_time(driver, '//*[@id="qualificationEndDate"]', info.end_date)
+    if info.start_date and info.end_date:
+        input_time(driver, '//*[@id="qualificationStartDate"]', info.start_date)
+        input_time(driver, '//*[@id="qualificationEndDate"]', info.end_date)
 
     patient_select(driver, '//*[@id="leaderboardScore"]', int(info.leaderboard_score))
 
-    max_players_input = gwefxp(driver, '//*[@id="max_players"]')
-    max_players_input.clear()
-    max_players_input.send_keys(info.max_players)
+    if info.max_players:
+        max_players_input = gwefxp(driver, '//*[@id="max_players"]')
+        max_players_input.clear()
+        max_players_input.send_keys(info.max_players)
 
     add_maps(driver, info.maps)
 
@@ -327,11 +333,12 @@ def update_rounds(driver: WebDriver, info: list[RoundInfo]):
         name_input.clear()
         name_input.send_keys(round_info.name)
 
-        input_time(driver, '//*[@id="roundStartDate"]', round_info.start_date)
-        input_time(driver, '//*[@id="roundEndDate"]', round_info.end_date)
+        if round_info.start_date and round_info.end_date:
+            input_time(driver, '//*[@id="roundStartDate"]', round_info.start_date)
+            input_time(driver, '//*[@id="roundEndDate"]', round_info.end_date)
 
         if round_info.qualifier:
-            patient_select(driver, '//*[@id="qualifier"]', round_info.qualifier.name)
+            patient_select(driver, '//*[@id="qualifier"]', round_info.qualifier)
 
         patient_select(driver, '//*[@id="leaderboardType"]', int(round_info.leaderboard_type))
 
@@ -342,9 +349,10 @@ def update_rounds(driver: WebDriver, info: list[RoundInfo]):
             round_info.script
         )
 
-        max_players_input = gwefxp(driver, '//*[@id="max_players"]')
-        max_players_input.clear()
-        max_players_input.send_keys(round_info.max_players)
+        if round_info.max_players:
+            max_players_input = gwefxp(driver, '//*[@id="max_players"]')
+            max_players_input.clear()
+            max_players_input.send_keys(round_info.max_players)
 
         if round_info.max_spectators:
             max_spec_input = gwefxp(driver, '//*[@id="max_spectators"]')
