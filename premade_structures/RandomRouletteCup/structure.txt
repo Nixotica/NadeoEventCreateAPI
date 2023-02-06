@@ -1,0 +1,213 @@
+{
+    "version": 0,
+    "rounds": [
+        {
+            "matchGeneratorData": {
+                "matches": [
+                    {
+                        "spots": [
+                            {
+                                "roundPosition": 0,
+                                "rank": 1,
+                                "spotType": "round_challenge_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "rank": 8,
+                                "spotType": "round_challenge_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "rank": 9,
+                                "spotType": "round_challenge_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "rank": 16,
+                                "spotType": "round_challenge_participant"
+                            }
+                        ],
+                        "settings": []
+                    },
+                    {
+                        "spots": [
+                            {
+                                "roundPosition": 0,
+                                "rank": 2,
+                                "spotType": "round_challenge_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "rank": 7,
+                                "spotType": "round_challenge_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "rank": 10,
+                                "spotType": "round_challenge_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "rank": 15,
+                                "spotType": "round_challenge_participant"
+                            }
+                        ],
+                        "settings": []
+                    },
+                    {
+                        "spots": [
+                            {
+                                "roundPosition": 0,
+                                "rank": 3,
+                                "spotType": "round_challenge_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "rank": 6,
+                                "spotType": "round_challenge_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "rank": 11,
+                                "spotType": "round_challenge_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "rank": 14,
+                                "spotType": "round_challenge_participant"
+                            }
+                        ],
+                        "settings": []
+                    },
+                    {
+                        "spots": [
+                            {
+                                "roundPosition": 0,
+                                "rank": 4,
+                                "spotType": "round_challenge_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "rank": 5,
+                                "spotType": "round_challenge_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "rank": 12,
+                                "spotType": "round_challenge_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "rank": 13,
+                                "spotType": "round_challenge_participant"
+                            }
+                        ],
+                        "settings": []
+                    }
+                ]
+            },
+            "matchGeneratorType": "spot_filler"
+        },
+        {
+            "matchGeneratorData": {
+                "matches": [
+                    {
+                        "spots": [
+                            {
+                                "roundPosition": 0,
+                                "matchPosition": 0,
+                                "rank": 1,
+                                "spotType": "match_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "matchPosition": 1,
+                                "rank": 2,
+                                "spotType": "match_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "matchPosition": 2,
+                                "rank": 2,
+                                "spotType": "match_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "matchPosition": 3,
+                                "rank": 1,
+                                "spotType": "match_participant"
+                            }
+                        ],
+                        "settings": []
+                    },
+                    {
+                        "spots": [
+                            {
+                                "roundPosition": 0,
+                                "matchPosition": 0,
+                                "rank": 2,
+                                "spotType": "match_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "matchPosition": 1,
+                                "rank": 1,
+                                "spotType": "match_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "matchPosition": 2,
+                                "rank": 1,
+                                "spotType": "match_participant"
+                            },
+                            {
+                                "roundPosition": 0,
+                                "matchPosition": 3,
+                                "rank": 2,
+                                "spotType": "match_participant"
+                            }
+                        ],
+                        "settings": []
+                    }
+                ]
+            },
+            "matchGeneratorType": "spot_filler"
+        },
+        {
+            "matchGeneratorData": {
+                "matches": [
+                    {
+                        "spots": [
+                            {
+                                "roundPosition": 1,
+                                "matchPosition": 0,
+                                "rank": 1,
+                                "spotType": "match_participant"
+                            },
+                            {
+                                "roundPosition": 1,
+                                "matchPosition": 1,
+                                "rank": 1,
+                                "spotType": "match_participant"
+                            },
+                            {
+                                "roundPosition": 1,
+                                "matchPosition": 0,
+                                "rank": 2,
+                                "spotType": "match_participant"
+                            },
+                            {
+                                "roundPosition": 1,
+                                "matchPosition": 1,
+                                "rank": 1,
+                                "spotType": "match_participant"
+                            }
+                        ],
+                        "settings": []
+                    }
+                ]
+            },
+            "matchGeneratorType": "spot_filler"
+        }
+    ]
+}

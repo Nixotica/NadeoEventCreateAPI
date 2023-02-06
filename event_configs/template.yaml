@@ -22,7 +22,7 @@ Qualifier Info:
   Start Offset: !!int # (Optional) Time since running script to start qualifier in minutes
   End Offset: !!int # (Optional) Time since running script to end qualifier in minutes
   Leaderboard Score: !!int # (Optional) Score keeping method (view website for options, zero-indexed)
-  Max Players: !!int # (Optional) Maximum players allowed to play the qualifier
+  Max Players: !!int # (Optional) Maximum players per qualifier server
   Maps:
     Pool: !!list[string] # (Optional) UID of map(s)
     Choose Random: !!boolean # (Optional) Choose random map from list of maps (or random from TMX if none provided)

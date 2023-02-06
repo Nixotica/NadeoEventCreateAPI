@@ -211,8 +211,8 @@ def write_basic_info(driver: WebDriver, info: CompetitionBasicInfo):
 
     if info.desc:
         desc_input = gwefxp(driver, '//*[@id="description"]')
-        info.desc += "\n\nThis event was generated using the Trackmania Event Creation tool. " \
-                     "https://github.com/Nixotica/NadeoEventCreateAPI "
+        info.desc += "\n\nThis event was generated using the Trackmania Event Creation tool.\n" \
+                     "$lhttps://github.com/Nixotica/NadeoEventCreateAPI"
         desc_input.send_keys(info.desc)
 
     if info.rules:
@@ -241,9 +241,10 @@ def write_registration(driver: WebDriver, info: RegistrationInfo):
             input_time(driver, '//*[@id="startDate"]', info.start_date)
             input_time(driver, '//*[@id="endDate"]', info.end_date)
 
-        max_players_input = gwefxp(driver, '//*[@id="addRegistrationContainer"]/form/div[3]/input')
-        max_players_input.clear()
-        max_players_input.send_keys(info.max_players)
+        if info.max_players:
+            max_players_input = gwefxp(driver, '//*[@id="addRegistrationContainer"]/form/div[3]/input')
+            max_players_input.clear()
+            max_players_input.send_keys(info.max_players)
 
         if info.zones:
             zones_input = gwefxp(driver, '//*[@id="addRegistrationContainer"]/form/div[4]/input')

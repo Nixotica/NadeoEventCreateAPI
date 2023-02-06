@@ -10,8 +10,8 @@ Registration Info:
   Start Date:
   End Date:
   Start Offset: 0
-  End Offset: 5
-  Max Players: 48
+  End Offset: 20
+  Max Players:
 Structure Info:
   Premade Structure: "DeltaBracket24"
 Qualifier Info:
@@ -20,12 +20,12 @@ Qualifier Info:
   Start Date:
   End Date:
   Start Offset: 5
-  End Offset: 15
+  End Offset: 25
   Leaderboard Score: 2
-  Max Players: 48
+  Max Players:
   Maps:
-    Pool:
-    Choose Random: true
+    Pool: ["IoEz6A8zWtIfCQ1C8woIQQM_fUa", "fdArnftBTYFWzhqfiGIgjjl3XJ3"]
+    Choose Random: false
     Choose Count:
   Settings: "qualifier_settings.json"
 Round Info:
@@ -33,41 +33,41 @@ Round Info:
     Name: "Quarter Finals"
     Start Date:
     End Date:
-    Start Offset: 18
-    End Offset: 38
+    Start Offset: 27
+    End Offset: 52
     Leaderboard Type: 1
     Script: "Cup"
     Max Players:
     Maps:
-      Pool:
-      Choose Random: true
+      Pool: ["fdArnftBTYFWzhqfiGIgjjl3XJ3"]
+      Choose Random: false
       Choose Count:
     Settings: "round_settings.json"
   Round 2:
     Name: "Semi Finals"
     Start Date:
     End Date:
-    Start Offset: 40
-    End Offset: 60
+    Start Offset: 54
+    End Offset: 79
     Leaderboard Type: 1
     Script: "Cup"
     Max Players:
     Maps:
-      Pool:
-      Choose Random: true
+      Pool: ["fdArnftBTYFWzhqfiGIgjjl3XJ3"]
+      Choose Random: false
       Choose Count:
     Settings: "round_settings.json"
   Round 3:
     Name: "Grand Finals"
     Start Date:
     End Date:
-    Start Offset: 62
-    End Offset: 82
+    Start Offset: 81
+    End Offset: 106
     Leaderboard Type: 1
     Script: "Cup"
     Max Players:
     Maps:
-      Pool:
-      Choose Random: true
+      Pool: ["fdArnftBTYFWzhqfiGIgjjl3XJ3"]
+      Choose Random: false
       Choose Count:
     Settings: "round_settings.json"

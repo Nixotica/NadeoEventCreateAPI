@@ -1,0 +1,73 @@
+Browser: "Chrome"
+Basic Info:
+  Name: "Random Test"
+  Club: "Nixoticlub"
+  Teams: false
+  Desc:
+  Rules:
+Registration Info:
+  Registration: false
+  Start Date:
+  End Date:
+  Start Offset:
+  End Offset:
+  Max PLayers:
+Structure Info:
+  Premade Structure: "RandomRouletteCup"
+Qualifier Info:
+  Qualifier: true
+  Name: "Open Qualifier"
+  Start Date:
+  End Date:
+  Start Offset: 5
+  End Offset: 35
+  Leaderboard Score: 0
+  Max Players:
+  Maps:
+    Pool: ["kRY154ePGc_e_DeIjKDmKyEvqMm", "5i6eQFrFOh50XqsBzSaF5AE8Yp8", "WVer0yh80n1MG_KNDL22QzXZGn8", "nPNAxzaFzu5HURpQa3LugeWC9mm", "e_gcjMXr65YATwNDFDQpN1Cbaa8", "8hoZUgARlIgQ8KinsUgrKLLfBS9"]
+    Choose Random: false
+    Choose Count:
+  Settings: "qualifier_settings.json"
+Round Info:
+  Round 1:
+    Name: "Quarter Final"
+    Start Date:
+    End Date:
+    Start Offset: 40
+    End Offset: 80
+    Leaderboard Type: 1
+    Script: "Cup"
+    Max Players: 4
+    Maps:
+      Pool: ["kRY154ePGc_e_DeIjKDmKyEvqMm", "5i6eQFrFOh50XqsBzSaF5AE8Yp8", "WVer0yh80n1MG_KNDL22QzXZGn8", "nPNAxzaFzu5HURpQa3LugeWC9mm", "e_gcjMXr65YATwNDFDQpN1Cbaa8", "8hoZUgARlIgQ8KinsUgrKLLfBS9"]
+      Choose Random: true
+      Choose Count: 3
+    Settings: "round_settings.json"
+  Round 2:
+    Name: "Semi Final"
+    Start Date:
+    End Date:
+    Start Offset: 85
+    End Offset: 125
+    Leaderboard Type: 1
+    Script: "Cup"
+    Max Players: 4
+    Maps:
+      Pool: ["kRY154ePGc_e_DeIjKDmKyEvqMm", "5i6eQFrFOh50XqsBzSaF5AE8Yp8", "WVer0yh80n1MG_KNDL22QzXZGn8", "nPNAxzaFzu5HURpQa3LugeWC9mm", "e_gcjMXr65YATwNDFDQpN1Cbaa8", "8hoZUgARlIgQ8KinsUgrKLLfBS9"]
+      Choose Random: true
+      Choose Count: 3
+    Settings: "round_settings.json"
+  Round 3:
+    Name: "Grand Final"
+    Start Date:
+    End Date:
+    Start Offset: 130
+    End Offset: 170
+    Leaderboard Type: 1
+    Script: "Cup"
+    Max Players: 4
+    Maps:
+      Pool: ["kRY154ePGc_e_DeIjKDmKyEvqMm", "5i6eQFrFOh50XqsBzSaF5AE8Yp8", "WVer0yh80n1MG_KNDL22QzXZGn8", "nPNAxzaFzu5HURpQa3LugeWC9mm", "e_gcjMXr65YATwNDFDQpN1Cbaa8", "8hoZUgARlIgQ8KinsUgrKLLfBS9"]
+      Choose Random: true
+      Choose Count: 3
+    Settings: "round_settings.json"
