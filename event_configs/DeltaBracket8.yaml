@@ -1,0 +1,58 @@
+Browser: "Chrome"
+Basic Info:
+  Name: "Delta Bracket 8 Player Test"
+  Club: "Nixoticlub"
+  Teams: false
+  Desc: "Delta Bracket Test"
+  Rules:
+Registration Info:
+  Start Date:
+  End Date:
+  Start Offset: 0
+  End Offset: 10
+  Max Players:
+Structure Info:
+  Premade Structure: "DeltaBracket8"
+Qualifier Info:
+  Qualifier: true
+  Name: "Qualifier"
+  Start Date:
+  End Date:
+  Start Offset: 5
+  End Offset: 15
+  Leaderboard Score: 2
+  Max Players:
+  Maps:
+    Pool:
+    Choose Random: true
+    Choose Count: 1
+  Settings: "qualifier_settings.json"
+Round Info:
+  Round 1:
+    Name: "Semi Finals"
+    Start Date:
+    End Date:
+    Start Offset: 17
+    End Offset: 47
+    Leaderboard Type: 1
+    Script: "Cup"
+    Max Players:
+    Maps:
+      Pool:
+      Choose Random: true
+      Choose Count: 3
+    Settings: "round_settings.json"
+  Round 2:
+    Name: "Grand Finals"
+    Start Date:
+    End Date:
+    Start Offset: 49
+    End Offset: 79
+    Leaderboard Type: 1
+    Script: "Cup"
+    Max Players:
+    Maps:
+      Pool:
+      Choose Random: true
+      Choose Count: 3
+    Settings: "round_settings.json"

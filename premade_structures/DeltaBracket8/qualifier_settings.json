@@ -1,0 +1,14 @@
+{
+  "script_settings":
+          [
+            {
+              "Setting": "S_TimeLimit",
+              "Type": "integer",
+              "Value": 600
+            }
+          ],
+  "plugin_settings":
+          [
+
+          ]
+}

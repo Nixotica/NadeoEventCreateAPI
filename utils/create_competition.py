@@ -81,11 +81,11 @@ def add_maps(driver: WebDriver, maps: list[str]):
 def fill_in_setting(driver: WebDriver, setting: dict):
     wuvexp(driver, '//*[@id="name"]')
     name_input_q1 = gwefxp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div/div/div/div'
-                                '/form/app-config-form-component/form/div[6]/div/app-settings-component/form/div['
-                                '1]/div/input')
+                                   '/form/app-config-form-component/form/div[6]/div/app-settings-component/form/div['
+                                   '1]/div/input')
     name_input_q2 = gwefxp(driver, '/html/body/app-root/app-qualification-component/app-base-component/div/div/div/div'
-                                '/form/app-config-form-component/form/div[9]/div/app-settings-component/form/div['
-                                '1]/div/input')
+                                   '/form/app-config-form-component/form/div[9]/div/app-settings-component/form/div['
+                                   '1]/div/input')
     name_input_r1 = gwefxp(driver, '/html/body/app-root/app-new-round-component/app-base-component/div/div/div/div'
                                    '/form/app-config-form-component/form/div[7]/div/app-settings-component/form/div['
                                    '1]/div/input')
@@ -224,6 +224,7 @@ def write_basic_info(driver: WebDriver, info: CompetitionBasicInfo):
     button_next.click()
 
 
+# This should not be touched because apparently it breaks competitions if you don't have registration lol
 def disable_registration(driver: WebDriver):
     wuvexp(driver, '/html/body/app-root/app-registration-component/app-base-component/div/div/div/div/div[1]/div/h1')
 
@@ -234,21 +235,18 @@ def disable_registration(driver: WebDriver):
 def write_registration(driver: WebDriver, info: RegistrationInfo):
     wuvexp(driver, '/html/body/app-root/app-registration-component/app-base-component/div/div/div/div/div[1]/div/h1')
 
-    if info is None:
-        disable_registration(driver)
-    else:
-        if info.start_date and info.end_date:
-            input_time(driver, '//*[@id="startDate"]', info.start_date)
-            input_time(driver, '//*[@id="endDate"]', info.end_date)
+    if info.start_date and info.end_date:
+        input_time(driver, '//*[@id="startDate"]', info.start_date)
+        input_time(driver, '//*[@id="endDate"]', info.end_date)
 
-        if info.max_players:
-            max_players_input = gwefxp(driver, '//*[@id="addRegistrationContainer"]/form/div[3]/input')
-            max_players_input.clear()
-            max_players_input.send_keys(info.max_players)
+    if info.max_players:
+        max_players_input = gwefxp(driver, '//*[@id="addRegistrationContainer"]/form/div[3]/input')
+        max_players_input.clear()
+        max_players_input.send_keys(info.max_players)
 
-        if info.zones:
-            zones_input = gwefxp(driver, '//*[@id="addRegistrationContainer"]/form/div[4]/input')
-            zones_input.send_keys(info.zones)
+    if info.zones:
+        zones_input = gwefxp(driver, '//*[@id="addRegistrationContainer"]/form/div[4]/input')
+        zones_input.send_keys(info.zones)
 
     button_next = gwefxp(driver, '/html/body/app-root/app-registration-component/app-base-component/div/div/div/div'
                                  '/div[4]/div/button/span[1]')
@@ -315,16 +313,18 @@ def update_rounds(driver: WebDriver, info: list[RoundInfo]):
     for round_info in info:
         alert: bool = len(driver.find_elements(By.XPATH, '//*[@id="alert-dates-2"]/p')) > 0
         if alert:
-            wuvexp(driver, f'/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div/app'
-                           f'-spot-structure-component/div[3]/div[{1+round_num}]/div[3]/button[2]')
+            wuvexp(driver,
+                   f'/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div/app'
+                   f'-spot-structure-component/div[3]/div[{1 + round_num}]/div[3]/button[2]')
             button_edit = gwefxp(driver, f'/html/body/app-root/app-create-competition-spotstructure/app-base-component'
-                                         f'/div/div/div/div/app-spot-structure-component/div[3]/div[{1+round_num}]/div['
+                                         f'/div/div/div/div/app-spot-structure-component/div[3]/div[{1 + round_num}]/div['
                                          f'3]/button[2]')
         else:
-            wuvexp(driver, f'/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div/app'
-                           f'-spot-structure-component/div[3]/div[{1+round_num}]/div[2]/button[2]')
+            wuvexp(driver,
+                   f'/html/body/app-root/app-create-competition-spotstructure/app-base-component/div/div/div/div/app'
+                   f'-spot-structure-component/div[3]/div[{1 + round_num}]/div[2]/button[2]')
             button_edit = gwefxp(driver, f'/html/body/app-root/app-create-competition-spotstructure/app-base-component'
-                                         f'/div/div/div/div/app-spot-structure-component/div[3]/div[{1+round_num}]/div['
+                                         f'/div/div/div/div/app-spot-structure-component/div[3]/div[{1 + round_num}]/div['
                                          f'2]/button[2]')
         button_edit.click()
 

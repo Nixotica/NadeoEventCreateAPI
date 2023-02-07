@@ -1,0 +1,224 @@
+{
+  "clubId": 263,
+  "description": "test_description",
+  "name": "my_posted_competition",
+  "registrationEndDate": "2023-02-07T07:00:00.000Z",
+  "registrationStartDate": "2023-02-07T06:30:00.000Z",
+  "rounds": [
+    {
+      "name": "round 1",
+      "position": 0,
+      "startDate": "2023-02-07T07:35:00.000Z",
+      "endDate": "2023-02-07T08:05:00.000Z",
+      "nbMatches": 2,
+      "qualifier": {
+        "config": {
+          "name": "Qualifier",
+          "maps": [
+            "rUS5sqVqaZubmj0cJdNVVJ_NQvh"
+          ],
+          "script": "TrackMania/TM_TimeAttack_Online.Script.txt",
+          "plugin": "server-plugins/Club/ClubPlugin.Script.txt",
+          "pluginSettings": {
+            "S_AdImageUrls": "",
+            "S_MessageTimer": ""
+          },
+          "password": "",
+          "maxPlayers": 64,
+          "maxSpectators": 64,
+          "scriptSettings": {
+            "S_TimeLimit": 100,
+            "S_WarmUpNb": 0,
+            "S_WarmUpDuration": 0,
+            "S_ForceLapsNb": 0
+          }
+        },
+        "endDate": "2023-02-07T07:30:00.000Z",
+        "leaderboardType": "SUM",
+        "position": 0,
+        "startDate": "2023-02-07T07:00:00.000Z",
+        "id": null,
+        "name": "Qualifier",
+        "isQualification": true
+      },
+      "leaderboardType": "BRACKET",
+      "config": {
+        "name": "round 1",
+        "maps": [
+          "rUS5sqVqaZubmj0cJdNVVJ_NQvh"
+        ],
+        "script": "TrackMania/TM_Rounds_Online.Script.txt",
+        "plugin": "server-plugins/Club/ClubPlugin.Script.txt",
+        "pluginSettings": {
+          "S_AdImageUrls": "",
+          "S_AutoStartMode": "",
+          "S_AutoStartDelay": 600,
+          "S_PickBanStartAuto": false,
+          "S_EnableReadyManager": true,
+          "S_UseAutoReady": true,
+          "S_ReadyStartRatio": 1,
+          "S_ReadyMinimumTeamSize": 1,
+          "S_MessageTimer": ""
+        },
+        "password": "",
+        "maxPlayers": 64,
+        "maxSpectators": 64,
+        "scriptSettings": {
+          "S_PointsRepartition": "",
+          "S_PointsLimit": 50,
+          "S_FinishTimeout": -1,
+          "S_RoundsPerMap": -1,
+          "S_MapsPerMatch": -1,
+          "S_UseTieBreak": true,
+          "S_WarmUpNb": 0,
+          "S_WarmUpDuration": 0
+        }
+      },
+      "teamLeaderboardType": null
+    },
+    {
+      "name": "round 2",
+      "position": 1,
+      "startDate": "2023-02-07T08:10:00.000Z",
+      "endDate": "2023-02-07T08:40:00.000Z",
+      "nbMatches": 1,
+      "qualifier": null,
+      "leaderboardType": "BRACKET",
+      "config": {
+        "name": "round 2",
+        "maps": [
+          "rUS5sqVqaZubmj0cJdNVVJ_NQvh"
+        ],
+        "script": "TrackMania/TM_Rounds_Online.Script.txt",
+        "plugin": "server-plugins/Club/ClubPlugin.Script.txt",
+        "pluginSettings": {
+          "S_AdImageUrls": "",
+          "S_AutoStartMode": "",
+          "S_AutoStartDelay": 600,
+          "S_PickBanStartAuto": false,
+          "S_EnableReadyManager": true,
+          "S_UseAutoReady": true,
+          "S_ReadyStartRatio": 1,
+          "S_ReadyMinimumTeamSize": 1,
+          "S_MessageTimer": ""
+        },
+        "password": "",
+        "maxPlayers": 64,
+        "maxSpectators": 64,
+        "scriptSettings": {
+          "S_PointsRepartition": "",
+          "S_PointsLimit": 50,
+          "S_FinishTimeout": -1,
+          "S_RoundsPerMap": -1,
+          "S_MapsPerMatch": -1,
+          "S_UseTieBreak": true,
+          "S_WarmUpNb": 0,
+          "S_WarmUpDuration": 0
+        }
+      },
+      "teamLeaderboardType": null
+    }
+  ],
+  "rulesUrl": "test_rules",
+  "spotStructure": {
+    "version": 1,
+    "rounds": [
+      {
+        "name": "Semi Finals",
+        "matchGeneratorType": "spot_filler",
+        "matchGeneratorData": {
+          "matches": [
+            {
+              "spots": [
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 1
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 4
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 5
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 8
+                }
+              ]
+            },
+            {
+              "spots": [
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 2
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 3
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 6
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 7
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "Grand Finals",
+        "matchGeneratorType": "spot_filler",
+        "matchGeneratorData": {
+          "matches": [
+            {
+              "spots": [
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 0,
+                  "rank": 1
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 1,
+                  "rank": 1
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 1,
+                  "rank": 2
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 0,
+                  "rank": 2
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "startDate": "",
+  "maxPlayers": 10000,
+  "allowedZone": "World",
+  "participantType": "PLAYER"
+}

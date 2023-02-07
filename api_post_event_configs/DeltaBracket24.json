@@ -1,0 +1,455 @@
+{
+  "clubId": 46350,
+  "description": "Delta Bracket Test\n\nThis event was generated using the Trackmania Event Creation tool.\n$lhttps://github.com/Nixotica/NadeoEventCreateAPI",
+  "name": "Delta Bracket Test",
+  "registrationEndDate": "2023-02-07T07:35:00.000Z",
+  "registrationStartDate": "2023-02-07T07:05:00.000Z",
+  "rounds": [
+    {
+      "name": "Quarter Finals",
+      "position": 0,
+      "startDate": "2023-02-07T07:33:00.000Z",
+      "endDate": "2023-02-07T07:58:00.000Z",
+      "nbMatches": 4,
+      "qualifier": {
+        "config": {
+          "name": "Qualifier",
+          "maps": [
+            "IoEz6A8zWtIfCQ1C8woIQQM_fUa",
+            "fdArnftBTYFWzhqfiGIgjjl3XJ3"
+          ],
+          "script": "TrackMania/TM_TimeAttack_Online.Script.txt",
+          "plugin": "server-plugins/Club/ClubPlugin.Script.txt",
+          "pluginSettings": {
+            "S_AdImageUrls": "",
+            "S_MessageTimer": ""
+          },
+          "password": "",
+          "maxPlayers": 64,
+          "maxSpectators": 64,
+          "scriptSettings": {
+            "S_TimeLimit": 600,
+            "S_WarmUpNb": 0,
+            "S_WarmUpDuration": 0,
+            "S_ForceLapsNb": 0
+          }
+        },
+        "endDate": "2023-02-07T07:30:00.000Z",
+        "leaderboardType": "SUMSCORE",
+        "position": 0,
+        "startDate": "2023-02-07T07:10:00.000Z",
+        "id": null,
+        "name": "Qualifier",
+        "isQualification": true
+      },
+      "leaderboardType": "BRACKET",
+      "config": {
+        "name": "Quarter Finals",
+        "maps": [
+          "fdArnftBTYFWzhqfiGIgjjl3XJ3"
+        ],
+        "script": "TrackMania/TM_Cup_Online.Script.txt",
+        "plugin": "server-plugins/Club/ClubPlugin.Script.txt",
+        "pluginSettings": {
+          "S_AdImageUrls": "",
+          "S_AutoStartMode": "delay",
+          "S_AutoStartDelay": 150,
+          "S_PickBanStartAuto": false,
+          "S_EnableReadyManager": true,
+          "S_UseAutoReady": true,
+          "S_ReadyStartRatio": 1,
+          "S_ReadyMinimumTeamSize": 1,
+          "S_MessageTimer": "",
+          "S_UsePlayerListComplete": true
+        },
+        "password": "",
+        "maxPlayers": 64,
+        "maxSpectators": 64,
+        "scriptSettings": {
+          "S_PointsRepartition": "1,0",
+          "S_PointsLimit": 2,
+          "S_FinishTimeout": 10,
+          "S_RoundsPerMap": 99,
+          "S_NbOfWinners": 3,
+          "S_WarmUpNb": 1,
+          "S_WarmUpDuration": 75
+        }
+      },
+      "teamLeaderboardType": null
+    },
+    {
+      "name": "Semi Finals",
+      "position": 1,
+      "startDate": "2023-02-07T08:00:00.000Z",
+      "endDate": "2023-02-07T08:25:00.000Z",
+      "nbMatches": 2,
+      "qualifier": null,
+      "leaderboardType": "BRACKET",
+      "config": {
+        "name": "Semi Finals",
+        "maps": [
+          "fdArnftBTYFWzhqfiGIgjjl3XJ3"
+        ],
+        "script": "TrackMania/TM_Cup_Online.Script.txt",
+        "plugin": "server-plugins/Club/ClubPlugin.Script.txt",
+        "pluginSettings": {
+          "S_AdImageUrls": "",
+          "S_AutoStartMode": "delay",
+          "S_AutoStartDelay": 150,
+          "S_PickBanStartAuto": false,
+          "S_EnableReadyManager": true,
+          "S_UseAutoReady": true,
+          "S_ReadyStartRatio": 1,
+          "S_ReadyMinimumTeamSize": 1,
+          "S_MessageTimer": "",
+          "S_UsePlayerListComplete": true
+        },
+        "password": "",
+        "maxPlayers": 64,
+        "maxSpectators": 64,
+        "scriptSettings": {
+          "S_PointsRepartition": "1,0",
+          "S_PointsLimit": 2,
+          "S_FinishTimeout": 10,
+          "S_RoundsPerMap": 99,
+          "S_NbOfWinners": 3,
+          "S_WarmUpNb": 1,
+          "S_WarmUpDuration": 75
+        }
+      },
+      "teamLeaderboardType": null
+    },
+    {
+      "name": "Grand Finals",
+      "position": 2,
+      "startDate": "2023-02-07T08:27:00.000Z",
+      "endDate": "2023-02-07T08:52:00.000Z",
+      "nbMatches": 1,
+      "qualifier": null,
+      "leaderboardType": "BRACKET",
+      "config": {
+        "name": "Grand Finals",
+        "maps": [
+          "fdArnftBTYFWzhqfiGIgjjl3XJ3"
+        ],
+        "script": "TrackMania/TM_Cup_Online.Script.txt",
+        "plugin": "server-plugins/Club/ClubPlugin.Script.txt",
+        "pluginSettings": {
+          "S_AdImageUrls": "",
+          "S_AutoStartMode": "delay",
+          "S_AutoStartDelay": 150,
+          "S_PickBanStartAuto": false,
+          "S_EnableReadyManager": true,
+          "S_UseAutoReady": true,
+          "S_ReadyStartRatio": 1,
+          "S_ReadyMinimumTeamSize": 1,
+          "S_MessageTimer": "",
+          "S_UsePlayerListComplete": true
+        },
+        "password": "",
+        "maxPlayers": 64,
+        "maxSpectators": 64,
+        "scriptSettings": {
+          "S_PointsRepartition": "1,0",
+          "S_PointsLimit": 2,
+          "S_FinishTimeout": 10,
+          "S_RoundsPerMap": 99,
+          "S_NbOfWinners": 3,
+          "S_WarmUpNb": 1,
+          "S_WarmUpDuration": 75
+        }
+      },
+      "teamLeaderboardType": null
+    }
+  ],
+  "rulesUrl": null,
+  "spotStructure": {
+    "version": 1,
+    "rounds": [
+      {
+        "name": "Round 1",
+        "matchGeneratorType": "spot_filler",
+        "matchGeneratorData": {
+          "matches": [
+            {
+              "spots": [
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 1
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 5
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 12
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 16
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 20
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 24
+                }
+              ]
+            },
+            {
+              "spots": [
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 2
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 6
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 11
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 15
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 19
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 23
+                }
+              ]
+            },
+            {
+              "spots": [
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 3
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 7
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 10
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 14
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 18
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 22
+                }
+              ]
+            },
+            {
+              "spots": [
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 4
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 8
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 9
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 13
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 17
+                },
+                {
+                  "spotType": "round_challenge_participant",
+                  "roundPosition": 0,
+                  "rank": 21
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "Semifinals",
+        "matchGeneratorType": "spot_filler",
+        "matchGeneratorData": {
+          "matches": [
+            {
+              "spots": [
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 0,
+                  "rank": 1
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 2,
+                  "rank": 1
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 1,
+                  "rank": 2
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 3,
+                  "rank": 2
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 3,
+                  "rank": 3
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 0,
+                  "rank": 3
+                }
+              ]
+            },
+            {
+              "spots": [
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 1,
+                  "rank": 1
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 3,
+                  "rank": 1
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 0,
+                  "rank": 2
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 2,
+                  "rank": 2
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 2,
+                  "rank": 3
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 0,
+                  "matchPosition": 1,
+                  "rank": 3
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "Grand Finals",
+        "matchGeneratorType": "spot_filler",
+        "matchGeneratorData": {
+          "matches": [
+            {
+              "spots": [
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 1,
+                  "matchPosition": 0,
+                  "rank": 1
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 1,
+                  "matchPosition": 1,
+                  "rank": 1
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 1,
+                  "matchPosition": 1,
+                  "rank": 2
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 1,
+                  "matchPosition": 0,
+                  "rank": 2
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 1,
+                  "matchPosition": 0,
+                  "rank": 3
+                },
+                {
+                  "spotType": "match_participant",
+                  "roundPosition": 1,
+                  "matchPosition": 1,
+                  "rank": 3
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "startDate": "",
+  "maxPlayers": 10000,
+  "allowedZone": "",
+  "participantType": "PLAYER"
+}

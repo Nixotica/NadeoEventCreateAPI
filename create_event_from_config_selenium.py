@@ -2,7 +2,6 @@ from random import choice
 from typing import Tuple
 
 import yaml
-import copy
 import datetime as dt
 import os.path
 
@@ -88,16 +87,13 @@ def create_event(event_config: str):
     write_basic_info(driver, comp_info)
 
     reg_info = event['Registration Info']
-    if reg_info['Registration']:
-        start_date, end_date = get_dates(reg_info)
-        registration_info = RegistrationInfo(
-            start_date=start_date,
-            end_date=end_date,
-            max_players=reg_info['Max Players']
-        )
-        write_registration(driver, registration_info)
-    else:
-        write_registration(driver, None)
+    start_date, end_date = get_dates(reg_info)
+    registration_info = RegistrationInfo(
+        start_date=start_date,
+        end_date=end_date,
+        max_players=reg_info['Max Players']
+    )
+    write_registration(driver, registration_info)
 
     struc_info = event['Structure Info']
     structure_info = StructureInfo(

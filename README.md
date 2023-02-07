@@ -4,3 +4,5 @@
 will write this once i have some more accessible APIs
 
 for now just make sure to add your environment variables to the venv and follow the premade structure and main.py as a guide
+
+Join the discord for development and progress https://discord.gg/r3b67352ne

@@ -1,0 +1,58 @@
+{
+  "script_settings":
+          [
+            {
+              "Setting": "S_FinishTimeout",
+              "Type": "integer",
+              "Value": 10
+            },
+            {
+              "Setting": "S_PointsLimit",
+              "Type": "integer",
+              "Value": "4"
+            },
+            {
+              "Setting": "S_RoundsPerMap",
+              "Type": "integer",
+              "Value": "3"
+            },
+            {
+              "Setting": "S_WarmUpDuration",
+              "Type": "integer",
+              "Value": "75"
+            },
+            {
+              "Setting": "S_WarmUpNb",
+              "Type": "integer",
+              "Value": "1"
+            },
+            {
+              "Setting": "S_PointsRepartition",
+              "Type": "text",
+              "Value": "1,0"
+            },
+            {
+              "Setting": "S_NbOfWinners",
+              "Type": "integer",
+              "Value": "2"
+            }
+          ],
+  "plugin_settings":
+          [
+            {
+              "Setting": "S_AutoStartMode",
+              "Type": "text",
+              "Value": "delay"
+            },
+            {
+              "Setting": "S_AutoStartDelay",
+              "Type": "integer",
+              "Value": "150"
+            },
+            {
+              "Setting": "S_UsePlayerListComplete",
+              "Type": "boolean",
+              "Value": "True"
+            }
+          ]
+}
