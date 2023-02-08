@@ -1,0 +1,76 @@
+{
+  "clubId": 263,
+  "description": null,
+  "name": "TMWT Scrim",
+  "registrationEndDate": null,
+  "registrationStartDate": null,
+  "rounds": [
+    {
+      "name": "Round 1",
+      "position": 0,
+      "startDate": "2023-02-08T06:20:00.000Z",
+      "endDate": "2023-02-08T07:20:00.000Z",
+      "nbMatches": 0,
+      "qualifier": null,
+      "leaderboardType": "BRACKET",
+      "config": {
+        "name": "Round 1",
+        "maps": [
+          "Wa0FxXSM363CCYEh3uTwjxOTcLi",
+          "4VxmHRGL5aQ9Ap_WAZicwKb1ohb",
+          "uOS8IXicSoHX_oo3rcpl81pwEAj",
+          "YI2kowTGtzFHqkPGZFyRG4SUha3",
+          "ZV2aWMY9SRgGkXR_ol8aiw7n37l",
+          "w6yZQCKiSkqWDLZNErw49qtbeG6",
+          "N7TWhYUiecAXf7wx_naPzpkaaUd",
+          "D6JgQlTA1Zm6ukVmdk_WECLW4Ki",
+          "FgFXuAsWiZr7M9RUwWduKplLcf5",
+          "lgbphUU9UpJZSoKc8dTD3EjPmtj"
+        ],
+        "script": "TrackMania/TM_TMWTTeams_Online.Script.txt",
+        "plugin": "",
+        "pluginSettings": {
+          "S_AdImageUrls": "",
+          "S_AutoStartMode": "delay",
+          "S_AutoStartDelay": 600,
+          "S_PickBanStartAuto": true,
+          "S_PickBanOrder": "b:1,b:0,p:0,p:1,p:0,p:1,b:0,b:1,p:r",
+          "S_EnableReadyManager": true,
+          "S_UseAutoReady": true,
+          "S_ReadyStartRatio": 1,
+          "S_MessageTimer": "",
+          "S_ReadyMinimumTeamSize": 2
+        },
+        "maxPlayers": 4,
+        "maxSpectators": 32,
+        "scriptSettings": {
+          "S_FinishTimeout": 15,
+          "S_MapPointsLimit": 10,
+          "S_MatchPointsLimit": 3,
+          "S_RespawnBehaviour": 5,
+          "S_WarmUpDuration": 25,
+          "S_WarmUpNb": 1,
+          "S_TeamsUrl": "https://pastebin.com/wMdMnSXJ"
+        }
+      },
+      "teamLeaderboardType": "TEAM_SCORE"
+    }
+  ],
+  "rulesUrl": null,
+  "spotStructure": {
+    "version": 0,
+    "rounds": [
+      {
+        "name": "Round 1",
+        "matchGeneratorData": {
+          "matches": []
+        },
+        "matchGeneratorType": "spot_filler"
+      }
+    ]
+  },
+  "startDate": "",
+  "maxPlayers": 10000,
+  "allowedZone": "",
+  "participantType": "TEAM"
+}
