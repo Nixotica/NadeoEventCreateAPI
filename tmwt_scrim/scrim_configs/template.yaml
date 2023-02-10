@@ -2,7 +2,7 @@ Name: !!string # Name of match
 My Club: !!int # Id of club to host event in
 Campaign Club: !!int # Id of club hosting the campaign to scrim on
 Campaign: !!int # Id of campaign (trackmania.io/#/campaigns/<club_id>/<campaign_id>)
-Start Date: !!string # (Optional) Start time of the scrim (format: MM/DD/YYYY HH:MM:SS)
+Start Date: !!string # (Optional) Start time of the scrim (format: MM/DD/YYYY HH:MM:SS) in UTC
 Start Offset: !!int # (Optional) Offset from now in minutes to start scrim (default 0 if start date and this left blank)
 Team 1:
   Id: !!string # ID of team (will be used for name too)

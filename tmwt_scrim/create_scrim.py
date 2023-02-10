@@ -34,9 +34,9 @@ def create_scrim_from_config(config: str):
         date_format = "%m/%d/%Y %H:%M:%S"
         start_date = datetime.datetime.strptime(scrim["Start Date"], date_format)
     elif scrim["Start Offset"]:
-        start_date = datetime.datetime.now() + datetime.timedelta(minutes=scrim["Start Offset"])
+        start_date = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(minutes=scrim["Start Offset"])
     else:
-        start_date = datetime.datetime.now() + datetime.timedelta(minutes=3)
+        start_date = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(minutes=3)
 
     scrim_info = ScrimInfo(
         scrim["Name"],

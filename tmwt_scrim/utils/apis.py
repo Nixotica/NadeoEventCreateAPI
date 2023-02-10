@@ -135,13 +135,10 @@ def create_base_scrim(token: str, info: ScrimInfo):
 
     create_payload["rounds"][0]["config"]["scriptSettings"]["S_TeamsUrl"] = info.team_pastebin_url
 
-    print(json.dumps(create_payload))
-
     create_comp_url = "https://competition.trackmania.nadeo.club/api/competitions/web/create"
     response = requests.post(
         url=create_comp_url,
         headers={'Authorization': 'nadeo_v1 t=' + token},
-        json=json.dumps(create_payload))
+        json=create_payload)
 
-    print(response)
-    print(response.text)
+    match_id = response["id"]
