@@ -1,9 +1,16 @@
 [
-  {
-    "Team_Ids": [
-      "DG",
-      "100 Canadians"
-    ],
-    "S_TeamsUrl": "https://pastebin.com/wMdMnSXJ"
-  }
+    {
+        "Team_Ids": [
+            "DG",
+            "100 Canadians"
+        ],
+        "S_TeamsUrl": "https://pastebin.com/wMdMnSXJ"
+    },
+    {
+        "Team_Ids": [
+            "DG",
+            "EVO USA"
+        ],
+        "S_TeamsUrl": "https://pastebin.com/tZzP80sS"
+    }
 ]

@@ -4,9 +4,6 @@ import yaml
 
 from tmwt_scrim.utils.apis import *
 
-teams_pastebin_post_url = "https://competition.trackmania.nadeo.club/api/competitions/4825/teams"
-add_team_to_match_post_url = "https://competition.trackmania.nadeo.club/api/matches/48214/add-team"
-create_empty_match_post_url = "https://competition.trackmania.nadeo.club/api/rounds/11925/empty-match"
 
 def create_scrim_from_config(config: str):
     with open(os.path.join(os.path.curdir, f"tmwt_scrim/scrim_configs/{config}")) as stream:
@@ -14,11 +11,13 @@ def create_scrim_from_config(config: str):
 
     team_1 = TeamInfo(
         scrim["Team 1"]["Id"],
+        scrim["Team 1"]["Seed"],
         scrim["Team 1"]["Player 1"],
         scrim["Team 1"]["Player 2"]
     )
     team_2 = TeamInfo(
         scrim["Team 2"]["Id"],
+        scrim["Team 2"]["Seed"],
         scrim["Team 2"]["Player 1"],
         scrim["Team 2"]["Player 2"]
     )
@@ -51,4 +50,5 @@ def create_scrim_from_config(config: str):
 
     token = authenticate("NadeoClubServices", os.environ["AUTHORIZATION"])
 
-    create_base_scrim(token, scrim_info)
+    create_scrim(token, scrim_info)
+

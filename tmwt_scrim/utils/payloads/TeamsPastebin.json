@@ -1,25 +1,25 @@
 [
   {
-    "Id": "DG",
-    "Name": "DG",
+    "Id": "<team id>",
+    "Name": "<team id>",
     "Players": [
       {
-        "AccountId": "a4156317-9e21-43b5-a4ab-b23707431025"
+        "AccountId": "<account id 1>"
       },
       {
-        "AccountId": "2e34c3cb-9548-4815-aee3-c68518a1fd88"
+        "AccountId": "<account id 2>"
       }
     ]
   },
   {
-    "Id": "100 Canadians",
-    "Name": "100 Canadians",
+    "Id": "<team id>",
+    "Name": "<team id>",
     "Players": [
       {
-        "accountId": "2044fa80-990d-4d13-96de-909ed927d994"
+        "accountId": "<account id 1>"
       },
       {
-        "accountId": "3a6b19ad-f512-4564-812f-9d92593752ae"
+        "accountId": "<account id 2>"
       }
     ]
   }

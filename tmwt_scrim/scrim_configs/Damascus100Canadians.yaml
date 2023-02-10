@@ -6,9 +6,11 @@ Start Date:
 Start Offset:
 Team 1:
   Id: "DG"
+  Seed: 1
   Player 1: "a4156317-9e21-43b5-a4ab-b23707431025"
   Player 2: "2e34c3cb-9548-4815-aee3-c68518a1fd88"
 Team 2:
   Id: "100 Canadians"
+  Seed: 2
   Player 1: "2044fa80-990d-4d13-96de-909ed927d994"
   Player 2: "3a6b19ad-f512-4564-812f-9d92593752ae"

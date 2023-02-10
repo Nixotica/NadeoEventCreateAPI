@@ -1,31 +1,22 @@
 {
-  "clubId": 263,
+  "clubId": 0,
   "description": null,
-  "name": "TMWT Scrim",
+  "name": "<name>",
   "registrationEndDate": null,
   "registrationStartDate": null,
   "rounds": [
     {
       "name": "Round 1",
       "position": 0,
-      "startDate": "2023-02-08T06:20:00.000Z",
-      "endDate": "2023-02-08T07:20:00.000Z",
+      "startDate": "<start date>",
+      "endDate": "<end date>",
       "nbMatches": 0,
       "qualifier": null,
       "leaderboardType": "BRACKET",
       "config": {
         "name": "Round 1",
         "maps": [
-          "Wa0FxXSM363CCYEh3uTwjxOTcLi",
-          "4VxmHRGL5aQ9Ap_WAZicwKb1ohb",
-          "uOS8IXicSoHX_oo3rcpl81pwEAj",
-          "YI2kowTGtzFHqkPGZFyRG4SUha3",
-          "ZV2aWMY9SRgGkXR_ol8aiw7n37l",
-          "w6yZQCKiSkqWDLZNErw49qtbeG6",
-          "N7TWhYUiecAXf7wx_naPzpkaaUd",
-          "D6JgQlTA1Zm6ukVmdk_WECLW4Ki",
-          "FgFXuAsWiZr7M9RUwWduKplLcf5",
-          "lgbphUU9UpJZSoKc8dTD3EjPmtj"
+          "list-of-map-uids"
         ],
         "script": "TrackMania/TM_TMWTTeams_Online.Script.txt",
         "plugin": "",
@@ -50,7 +41,7 @@
           "S_RespawnBehaviour": 5,
           "S_WarmUpDuration": 25,
           "S_WarmUpNb": 1,
-          "S_TeamsUrl": "https://pastebin.com/wMdMnSXJ"
+          "S_TeamsUrl": "<team-url-pastebin>"
         }
       },
       "teamLeaderboardType": "TEAM_SCORE"

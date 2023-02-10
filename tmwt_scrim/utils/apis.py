@@ -1,9 +1,10 @@
 import datetime
 import json
 import os.path
-
+import time
+import urllib
+import urllib3
 import requests
-from pastebin import PastebinAPI
 from tmwt_scrim.utils.types import TeamInfo, PastebinInfo, ScrimInfo
 
 
@@ -84,9 +85,10 @@ def get_team_pair_pastebin_url(team_1: TeamInfo, team_2: TeamInfo, pastebin_info
     cache = json.load(open(os.path.join(os.path.curdir, "tmwt_scrim/utils/team_pastebin_pairs.json")))
     for team in cache:
         if team_1.id in team["Team_Ids"] and team_2.id in team["Team_Ids"]:
+            print("found pair locally")
             return team["S_TeamsUrl"]
 
-    paste = json.load(open(os.path.join(os.path.curdir, "tmwt_scrim/utils/payloads/TeamsPastebin")))
+    paste = json.load(open(os.path.join(os.path.curdir, "tmwt_scrim/utils/payloads/TeamsPastebin.json")))
 
     paste[0]["Id"] = team_1.id
     paste[0]["Name"] = team_1.id
@@ -98,28 +100,71 @@ def get_team_pair_pastebin_url(team_1: TeamInfo, team_2: TeamInfo, pastebin_info
     paste[1]["Players"][0]["AccountId"] = team_2.account_id_1
     paste[1]["Players"][1]["AccountId"] = team_2.account_id_2
 
-    key = PastebinAPI.generate_user_key(
-        api_dev_key=pastebin_info.api_dev_key,
-        username=pastebin_info.username,
-        password=pastebin_info.password)
+    url = "https://pastebin.com/api/api_post.php"
+    values = {
+        "api_dev_key": pastebin_info.api_dev_key,
+        "api_option": "paste",
+        "api_paste_code": json.dumps(paste)
+    }
+    data = urllib.parse.urlencode(values).encode("utf-8")
+    pastebin_url = urllib.request.urlopen(url, data).read().decode()
 
-    pastebin_url = PastebinAPI.paste(
-        api_dev_key=pastebin_info.api_dev_key,
-        api_paste_code=json.dumps(paste),
-        api_user_key=key)
-
-    cache.append({
-        "Team_Ids": [
-            team_1.id,
-            team_2.id
-        ],
-        "S_TeamsUrl": pastebin_url
-    })
+    with open(os.path.join(os.path.curdir, "tmwt_scrim/utils/team_pastebin_pairs.json"), 'r+') as f:
+        file_data = json.load(f)
+        file_data.append({
+            "Team_Ids": [
+                team_1.id,
+                team_2.id
+            ],
+            "S_TeamsUrl": pastebin_url
+        })
+        f.seek(0)
+        json.dump(file_data, f, indent=4)
 
     return pastebin_url
 
 
-def create_base_scrim(token: str, info: ScrimInfo):
+def add_team_to_match(token: str, comp_id: int, match_id: int, team: TeamInfo) -> str:
+    """
+    Create team for the competition and add them to the provided match.
+    :param token: NadeoClubServices token
+    :param comp_id: The competition ID
+    :param match_id: The match ID
+    :param team: The team to add to the match for this competition
+    """
+    create_team_payload = json.load(open(os.path.join(os.path.curdir, "tmwt_scrim/utils/payloads/CreateTeam.json")))
+    create_team_payload["id"] = team.id
+    create_team_payload["name"] = team.id
+    create_team_payload["seed"] = team.seed
+    create_team_payload["members"][0]["member"] = team.account_id_1
+    create_team_payload["members"][1]["member"] = team.account_id_2
+
+    create_team_url = f"https://competition.trackmania.nadeo.club/api/competitions/{comp_id}/teams"
+    requests.post(
+        url=create_team_url,
+        headers={'Authorization': 'nadeo_v1 t=' + token},
+        json=create_team_payload
+    )
+
+    add_team_to_match_payload = \
+        json.load(open(os.path.join(os.path.curdir, "tmwt_scrim/utils/payloads/AddTeamToMatch.json")))
+    add_team_to_match_payload["team"] = team.id
+
+    add_team_to_match_url = f"https://competition.trackmania.nadeo.club/api/matches/{match_id}/add-team"
+    requests.post(
+        url=add_team_to_match_url,
+        headers={'Authorization': 'nadeo_v1 t=' + token},
+        json=add_team_to_match_payload
+    )
+
+
+def create_scrim(token: str, info: ScrimInfo) -> str:
+    """
+    Creates the base scrim using scrim info
+    :param token: Nadeo Club Services token
+    :param info:
+    :return: Match ID
+    """
     create_payload = json.load(open(os.path.join(os.path.curdir, "tmwt_scrim/utils/payloads/CreateScrim.json")))
 
     create_payload["clubId"] = info.my_club_id
@@ -135,10 +180,37 @@ def create_base_scrim(token: str, info: ScrimInfo):
 
     create_payload["rounds"][0]["config"]["scriptSettings"]["S_TeamsUrl"] = info.team_pastebin_url
 
+    club_services_header = {'Authorization': 'nadeo_v1 t=' + token}
+
     create_comp_url = "https://competition.trackmania.nadeo.club/api/competitions/web/create"
     response = requests.post(
         url=create_comp_url,
-        headers={'Authorization': 'nadeo_v1 t=' + token},
-        json=create_payload)
+        headers=club_services_header,
+        json=create_payload
+    ).json()
+    comp_id = response["id"]
 
-    match_id = response["id"]
+    get_rounds_url = f"https://competition.trackmania.nadeo.club/api/competitions/{comp_id}/rounds"
+    response = requests.get(
+        url=get_rounds_url,
+        headers=club_services_header
+    ).json()
+    round_id = response[0]["id"]
+
+    create_empty_match_url = f"https://competition.trackmania.nadeo.club/api/rounds/{round_id}/empty-match"
+    requests.post(
+        url=create_empty_match_url,
+        headers=club_services_header
+    )
+
+    # For some reason this can take some time
+    time.sleep(2)
+    get_round_match_url = f"https://competition.trackmania.nadeo.club/api/rounds/{round_id}/matches"
+    response = requests.get(
+        url=get_round_match_url,
+        headers=club_services_header
+    ).json()
+    match_id = response["matches"][0]["id"]
+
+    add_team_to_match(token, comp_id, match_id, info.team_1)
+    add_team_to_match(token, comp_id, match_id, info.team_2)

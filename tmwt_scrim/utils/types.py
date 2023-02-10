@@ -5,10 +5,12 @@ class TeamInfo:
     def __init__(
             self,
             team_id: str,
+            seed: int,
             account_id_1: str,
             account_id_2: str
     ):
         self.id = team_id
+        self.seed = seed
         self.account_id_1 = account_id_1
         self.account_id_2 = account_id_2
 
